@@ -160,6 +160,7 @@ class PascalVOC2coco(object):
         annotation['image_id'] = self.num + 1
         # annotation['bbox'] = list(map(float, self.bbox))
         annotation['bbox'] = self.bbox
+        annotation['area'] = self.bbox[2] * self.bbox[3] # used to judge - LJ 2020.7.11
         annotation['category_id'] = self.getcatid(self.supercategory)
         annotation['id'] = self.annID
         return annotation
